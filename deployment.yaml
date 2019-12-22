@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: flipping-cards
+  labels:
+    app: flipping-cards
+spec:
+  selector:
+    matchLabels:
+      app: flipping-cards
+      tier: web
+  template:
+    metadata:
+      labels:
+        app: flipping-cards
+        tier: web
+    spec:
+      containers:
+      - name: flipping-cards
+        image: gcr.io/flipping-cards-420/app:v1
+        ports:
+        - containerPort: 80
