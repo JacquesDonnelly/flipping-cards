@@ -25,7 +25,7 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
       ),
       transition(
         'initial=>final',
-         animate('100s'), 
+         animate('200s'), 
       ),
       transition('final=>initial', animate('0s'))
       ]
