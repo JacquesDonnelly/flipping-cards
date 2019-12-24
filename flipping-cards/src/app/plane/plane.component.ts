@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnChanges, Input } from '@angular/core';
 import { trigger, state, style, animate, transition } from '@angular/animations';
 
 @Component({
@@ -33,9 +33,9 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
   ]
   }
 )
-export class PlaneComponent implements OnInit {
-
-  currentState = 'initial';
+export class PlaneComponent implements OnChanges {
+  @Input() triggerPlane: String;
+  currentState = 'final';
 
   changeState() {
     this.currentState = this.currentState === 'initial' ? 'final' : 'initial'
@@ -43,7 +43,8 @@ export class PlaneComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
+  ngOnChanges() {
+    this.changeState()
   }
 
 }

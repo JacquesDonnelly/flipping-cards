@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 import { trigger, state, style, transition, animate } from '@angular/animations';
 
 
@@ -22,6 +22,7 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
 export class CardComponent implements OnInit {
   @Input() location: String;
   @Input() option: String;
+  @Output() cardFlipped = new EventEmitter();
 
   constructor() { }
 
@@ -32,6 +33,7 @@ export class CardComponent implements OnInit {
 
   toggleFlip() {
     this.flip = (this.flip == 'inactive') ? 'active' : 'inactive';
+    this.cardFlipped.emit();
   }
 
 }

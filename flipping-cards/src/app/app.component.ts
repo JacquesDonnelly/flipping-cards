@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'flipping-cards';
+  triggerPlane = "no"
+
+  flyPlane(event) {
+    this.triggerPlane = (this.triggerPlane == 'no') ? 'yes' : 'no';
+  }
 }

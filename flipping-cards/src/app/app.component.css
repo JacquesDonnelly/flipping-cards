@@ -4,4 +4,19 @@ svg#clouds {
     left: -230px;
     z-index: -10;
     width: 1920px;
-  }
+}
+
+.header {
+  text-align: center;
+  font-family: "Arial";
+  font-size: large;
+}
+
+.header h2{
+  font-size: large
+}
+
+.container {
+  height: 100%;
+  position: relative;
+}
